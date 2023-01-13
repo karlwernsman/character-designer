@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Controls.css';
 
 export default function Controls({
@@ -11,6 +11,7 @@ export default function Controls({
   setHatCount,
   setCharacterCount,
   setShoeCount,
+  setCatchphrases,
 }) {
   const handleHat = (event) => {
     setHat(event.target.value);
@@ -29,6 +30,12 @@ export default function Controls({
     setShoeCount((currentState) => {
       return currentState + 1;
     });
+  };
+
+  const [catchphraseValue, setCatchphraseValue] = useState('');
+  const handleCatchphrase = () => {
+    setCatchphrases((currentState) => [...currentState, catchphraseValue]);
+    setCatchphraseValue('');
   };
 
   return (
@@ -67,6 +74,13 @@ export default function Controls({
         <option value="spaceBoots">Space boots</option>
         <option value="tundraBoots">Tundra boots</option>
       </select>
+      <h1>Make a catchphrase</h1>
+      <input
+        type="text"
+        value={catchphraseValue}
+        onChange={(event) => setCatchphraseValue(event.target.value)}
+      />
+      <button onClick={handleCatchphrase}>Submit</button>
     </div>
   );
 }

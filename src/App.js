@@ -11,14 +11,23 @@ function App() {
   const [hatCount, setHatCount] = useState(0);
   const [characterCount, setCharacterCount] = useState(0);
   const [shoeCount, setShoeCount] = useState(0);
+  const [catchphrases, setCatchphrases] = useState([]);
 
   return (
     <main>
       <Controls
-        {...{ setHat, setCharacter, setShoes, setHatCount, setCharacterCount, setShoeCount }}
+        {...{
+          setHat,
+          setCharacter,
+          setShoes,
+          setHatCount,
+          setCharacterCount,
+          setShoeCount,
+          setCatchphrases,
+        }}
       />
       <Counter {...{ hatCount, characterCount, shoeCount }} />
-      <Display {...{ hat, character, shoes }} />
+      <Display {...{ hat, character, shoes, catchphrases }} />
     </main>
   );
 }
