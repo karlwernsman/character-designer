@@ -1,12 +1,26 @@
 import React from 'react';
 import './Controls.css';
 
-export default function Controls({ hat, setHat, character, setCharacter }) {
+export default function Controls({
+  hat,
+  setHat,
+  character,
+  setCharacter,
+  shoes,
+  setShoes,
+  setHatCount,
+}) {
   const handleHat = (event) => {
     setHat(event.target.value);
+    setHatCount((currentState) => {
+      return currentState + 1;
+    });
   };
   const handleCharacter = (event) => {
     setCharacter(event.target.value);
+  };
+  const handleShoes = (event) => {
+    setShoes(event.target.value);
   };
 
   return (
@@ -34,6 +48,16 @@ export default function Controls({ hat, setHat, character, setCharacter }) {
         <option value="pam">Pam</option>
         <option value="sebastian">Sebastian</option>
         <option value="shane">Shane</option>
+      </select>
+      <h1>Pick a pair of shoes</h1>
+      <select value={shoes} onChange={handleShoes}>
+        <option value="cowboiBoots">Cowboi boots</option>
+        <option value="crystalShoes">Crystal shoes</option>
+        <option value="leatherBoots">Leather boots</option>
+        <option value="rubberBoots">Rubber boots</option>
+        <option value="sneakers">Sneakers</option>
+        <option value="spaceBoots">Space boots</option>
+        <option value="tundraBoots">Tundra boots</option>
       </select>
     </div>
   );
