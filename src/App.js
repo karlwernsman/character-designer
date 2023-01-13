@@ -3,6 +3,8 @@ import Display from './components/Display/Display.js';
 import Controls from './components/Controls/Controls.js';
 import { useState } from 'react';
 import Counter from './components/Counter/Counter.js';
+import Header from './components/Header/Header.js';
+import Footer from './components/Footer/Footer.js';
 
 function App() {
   const [hat, setHat] = useState('beanie');
@@ -15,19 +17,24 @@ function App() {
 
   return (
     <main>
-      <Controls
-        {...{
-          setHat,
-          setCharacter,
-          setShoes,
-          setHatCount,
-          setCharacterCount,
-          setShoeCount,
-          setCatchphrases,
-        }}
-      />
-      <Counter {...{ hatCount, characterCount, shoeCount }} />
-      <Display {...{ hat, character, shoes, catchphrases }} />
+      <Header />
+      <div className="characterSetup">
+        <Controls
+          className="controls"
+          {...{
+            setHat,
+            setCharacter,
+            setShoes,
+            setHatCount,
+            setCharacterCount,
+            setShoeCount,
+            setCatchphrases,
+          }}
+        />
+        <Display className="display" {...{ hat, character, shoes }} />
+      </div>
+      <Counter {...{ hatCount, characterCount, shoeCount, catchphrases }} />
+      <Footer />
     </main>
   );
 }

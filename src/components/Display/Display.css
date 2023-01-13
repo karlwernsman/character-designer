@@ -1,0 +1,9 @@
+.display {
+  display: flex;
+  flex-direction: column;
+  background-color: pink;
+}
+
+.display img {
+  width: 150px;
+}
