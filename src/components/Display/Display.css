@@ -1,0 +1,12 @@
+.display {
+  display: flex;
+  flex-direction: column;
+  background-color: #dda15e;
+  gap: 5px;
+  overflow: scroll;
+  border-radius: 25%;
+}
+
+.display img {
+  width: 150px;
+}
