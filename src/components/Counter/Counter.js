@@ -1,11 +1,11 @@
 import React from 'react';
 import './Counter.css';
 
-export default function Counter({ hatCount, characterCount }) {
+export default function Counter({ hatCount, characterCount, shoeCount }) {
   return (
     <p>
       You have changed the hat {hatCount} times, the character {characterCount} times, and the shoes{' '}
-      {} times.
+      {shoeCount} times.
     </p>
   );
 }

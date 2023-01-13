@@ -10,6 +10,7 @@ export default function Controls({
   setShoes,
   setHatCount,
   setCharacterCount,
+  setShoeCount,
 }) {
   const handleHat = (event) => {
     setHat(event.target.value);
@@ -25,6 +26,9 @@ export default function Controls({
   };
   const handleShoes = (event) => {
     setShoes(event.target.value);
+    setShoeCount((currentState) => {
+      return currentState + 1;
+    });
   };
 
   return (
